@@ -7,7 +7,7 @@
 }
 
 body {
-    background-color: #c9d6ff;
+    background: #bbd2d0;
     background: linear-gradient(to rigt,#e2e2e2,#c9d6ff);
     display: flex;
     align-items: center;
@@ -45,7 +45,7 @@ body {
 }
 
 .container button {
-    background-color: #512da8;
+    background-color: #218b64;
     color: #fff;
     font-size: 12px;
     padding: 10px 45px;
@@ -145,9 +145,9 @@ body {
 }
 
 .toogle {
-    background-color:#512da8 ;
+    background-color:#19ae81 ;
     height: 100%;
-    background: linear-gradient(to right, #5c6bc0, #512da8);
+    background: linear-gradient(to right, #36b3a4, #2aac58);
     color: #fff;
     position: relative;
     left: -100%;
@@ -191,3 +191,4 @@ body {
 .container.active .toogle_right {
     transform: translateX(200%);
 }
+
