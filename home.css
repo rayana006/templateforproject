@@ -251,7 +251,7 @@ footer {
 
 footer .footer_main {
     width: 100%;
-    background: #eeeee4;
+    background:#eeeee4;
     display: flex;
     justify-content: space-around;
 }

@@ -46,8 +46,8 @@ body {
 #hero {
     background: linear-gradient(var(--gr-1), var(--gr-2)), url(./assets/football-arena-field-or-soccer-stadium-background-with-bright-spotlights_212889-4388.avif) no-repeat center center / cover;
     width: 100%;
-    height: 1000px;
-    
+    height: fit-content;
+    padding-bottom: 30px;
 }
 
 .header {
@@ -71,9 +71,6 @@ body {
 .mobile_menu_icon .menu_icon {
     font-size: 5rem;
     color: var(--white);
-}
-.div_nav {
-
 }
 .nav_menu {
     display: flex;
@@ -108,19 +105,18 @@ body {
 body {
     margin: 0;
     font-family: 'Arial', sans-serif;
-    overflow: hidden;
 }
 
 .tournament-card {
-    
-    width: 1200px; /* Ширина карточки */
+    width: 1200px;
+    max-width:90%;
     height: 800px;
     background-color: rgba(255, 255, 255, 0.9);
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     overflow: hidden;
     border-radius: 8px;
     display: flex;
-    margin: auto; /* Центрирование по горизонтали */
+    margin: auto;
     padding: 50px;
 }
 
@@ -129,15 +125,12 @@ body {
     background: url('your_tournament_photo.jpg') center/cover no-repeat;
     position: relative;
     overflow: hidden;
+    min-height:50%;
 }
 
 .photo-overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
 }
 
 .tournament-info {
@@ -147,6 +140,7 @@ body {
     display: flex;
     flex-direction: column;
     justify-content: center;
+    gap: 15px;
     align-items: center;
 }
 
@@ -183,13 +177,14 @@ footer {
 
 footer .footer_main {
     width: 100%;
-    background: #eeeee4;
+    background: white;
     display: flex;
     justify-content: space-around;
 }
 
 footer .footer_main .tag {
     margin: 10px 0;
+    width: 235px;
 }
 
 footer .footer_main .tag .center {
@@ -248,7 +243,6 @@ footer .footer_main .tag .social_link a:hover {
 }
 
 .social_link a:after {
-    content: ;
     width: 100%;
     height: 100%;
     top: 0;
@@ -261,4 +255,98 @@ footer .footer_main .tag .social_link a:hover {
 
 .social_link a:hover::after {
     left: 0;
+}
+@media (max-width: 904px) {
+    .mobile_menu_icon {
+        display: block;
+    }
+    .nav_menu {
+        position: absolute;
+        visibility: hidden;
+        clip-path: circle(0% at 96% -20%);
+        top: 4rem;
+        left: 0;
+        width: 100%;
+        padding: 6rem 0;
+        background: var(--mobile-nav);
+        z-index: -1;
+        transition: all 0.7s ease-in-out;
+    }
+    .nav_menu.active {
+        visibility: visible;
+        clip-path: circle(150% at 100% 100%);
+        transition: all 0.7s ease-in-out;
+    }
+    .nav_list {
+        display: block;
+        text-align: center;
+        margin: 2.5rem 0;
+    }
+    .hero_img {
+        width: 100%;
+    }
+}
+
+@media screen and (max-width:768px) {
+    .tournament-card{
+        flex-direction: column;
+        height: fit-content;
+    }
+    .photo-overlay>img{
+        width:100%;
+        height: auto;
+    }
+    .tournament-title {
+        font-size: 30px;
+    }
+    .tournament-description {
+        font-size: 16px;
+    }
+    h2{
+        font-size: 1.3em;
+    }
+    .tournament-photo, .tournament-info{
+        flex: none;
+    }
+    .tournament-photo{
+        height: 360px;
+    }
+}
+
+@media (max-width: 639px) {
+    
+    .hero_img {
+        max-width: 30rem;
+    }
+}
+
+@media screen and (max-width:550px) {
+    .footer_main{
+    flex-direction: column;
+    gap: 20px;
+    align-items: center;
+    }
+    .tournament-title {
+        font-size: 24px;
+    }
+    .tournament-description {
+        font-size: 14px;
+    }
+    h2{
+        font-size: 1.1em;
+    }
+}
+@media screen and (max-width:425px){ 
+    .tournament-photo{
+        height: 100%;
+    }
+    .tournament-title {
+        font-size: 20px;
+    }
+    .tournament-description {
+        font-size: 13px;
+    }
+    h2{
+        font-size: 1em;
+    }
 }
